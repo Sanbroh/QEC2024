@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="ac" id="app-container"  style="grid-area: main;">
+        <div class="app-cont sub-container" id="vid-cont" style="grid-area: vid;">
+            <img src="{{ url_for('video_feed') }}" width="100%" />
+        </div>
+        <div class="app-cont sub-container" id="se-cont" style="grid-area: vid-se;">
+            <button type="button" onclick="window.location.href = '/end_session' ; " class="btn btn-danger" style="grid-area: e1;">End Session</button>
+            <button type="button" class="btn btn-outline-primary" style="grid-area: e2;">Pause</button>
+            <button type="button" class="btn btn-outline-primary" style="grid-area: e3;">Settings</button>
+            <div class="se-row" id="se-time" style="grid-area: s1;">
+                <p class="se-title bolded">Time:</p>
+                <p class="se-value">0</p>
+                <p>SECONDS</p>
+            </div>
+            <div class="se-row" id="se-ingre" style="grid-area: s2;">
+                <p class="se-title bolded">Ingredients:</p>
+                <p class="se-value">0</p>
+                <p>ITEMS</p>
+                <a href=".">[VIEW]</a>
+            </div>
+            <div class="se-row" id="se-score" style="grid-area: s3;">
+                <p class="se-title bolded">Score:</p>
+                <p class="se-value">0</p>
+                <p>POINTS</p>
+            </div>
+        </div>
+        <div class="app-cont sub-container" id="st-cont" style="grid-area: vid-st;">
+            <p style="grid-area: title;">Food SensAI</p>
+            <div id="ss-chat" style="grid-area: chat;">
+                <div class="ss-box" id="ss-default">
+                    <h6 class="ss-title">DEFAULT TITLE</h6>
+                    <p class="ss-p">DEFAULT CONTENT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

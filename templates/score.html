@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+<script>
+    var scores = JSON.parse('{{ scores|tojson }}');
+    console.log(scores);
+</script>
+<script src="{{ url_for('static',filename='js/score.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="ac" id="score-container"  style="grid-area: main;">
+        <div class="sub-container s-cont" id="s-score" style="grid-area: sc1;">
+            <h6 class="s-cont-title">SCORES</h6>
+            <br>
+            <div class="s-scores">
+                <p>OVERALL SCORE:</p>
+                <p class="s-scores-score" id="s-o">0</p>
+                <p>/ 100</p>
+            </div>
+            <div class="s-scores">
+                <p>INGREDIENT SCORE:</p>
+                <p class="s-scores-score" id="s-i">0</p>
+                <p>/ 100</p>
+            </div>
+            <div class="s-scores">
+                <p>RECIPE SCORE:</p>
+                <p class="s-scores-score" id="s-r">0</p>
+                <p>/ 100</p>
+            </div>
+            <div class="s-scores">
+                <p>GOAL SCORE:</p>
+                <p class="s-scores-score" id="s-g">0</p>
+                <p>/ 100</p>
+            </div>
+        </div>
+        <div class="sub-container s-cont" id="s-ingre" style="grid-area: sc2;">
+            <h6 class="s-cont-title">INGREDIENTS FEEDBACK</h6>
+            <p id="f-i">{{ i_f }}</p>
+        </div>
+        <div class="sub-container s-cont" id="s-recipe" style="grid-area: sc3;">
+            <h6 class="s-cont-title">RECIPE FEEDBACK</h6>
+            <p id="f-r">{{ r_f }}</p>
+        </div>
+        <div class="sub-container s-cont" id="s-fback" style="grid-area: sc4;">
+            <h6 class="s-cont-title">SENS-AI FEEDBACK</h6>
+            <p id="f-f">{{ s_f }}</p>
+        </div>
+    </div>
+    <button type="button" onclick="window.location.href = '/' ; " class="btn btn-danger" id="return-score">Return</button>
+{% endblock %}

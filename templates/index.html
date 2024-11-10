@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+{% endblock %}
+
+{% block script %}
+<script>
+    // JS
+
+</script>
+{% endblock %}
+
+{% block content %}
+    <div class="mc" id="main-container"  style="grid-area: main;">
+        <div class="sub-container" id="action-cont" style="grid-area: action;">
+            <button class="btn btn-success" role="button" onclick="window.location.href = '/application' ; " style="grid-area: start;">Start Cooking</button>
+            <button class="btn btn-success" role="button" onclick="window.location.href = '/score' ; " style="grid-area: submit;">Submit Video</button>
+            <button type="button" class="btn btn-outline-danger" style="grid-area: build;">Recipe Builder</button>
+            <button type="button" class="btn btn-outline-danger" style="grid-area: tournament;">Tournament</button>
+        </div>
+        <div class="sub-container" id="info-cont" style="grid-area: info;">
+            <div class="content-block" id="leaderboard" style="grid-area: leaderboard;">
+                <p class="cb-title">LEADERBOARD</p>
+                
+            </div>
+            <div class="content-block" id="stats" style="grid-area: stats;">
+                <p class="cb-title">STATS</p>
+
+            </div>
+        </div>
+        <div class="sub-container" style="grid-area: data;">
+            <p class="cb-title">DATA OVERVIEW</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,280 @@
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    position: relative;
+}
+
+#logo-png {
+    height: 3vw;
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -30%);
+    transform: translate(-50%, -30%);
+}
+
+.main {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+
+    top: 0;
+    left: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-areas:
+    'header'
+    'content';
+
+    gap: 10px;
+    
+    grid-template-rows: 10vh 90vh;
+
+    margin: 0;
+    background-color: #F8FFE5;
+}
+
+.content {
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-areas:
+    'main';
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+#main-container {
+    margin: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 10vh;
+
+    display: grid;
+    grid-template-areas:
+    'action info'
+    'data data';
+
+    gap: 10px;
+
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
+}
+
+.sub-container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+
+    border-style: solid;
+    border-color: #06D6A0;
+    border-width: 2px;
+}
+
+button {
+    border-radius: 16px !important;
+}
+
+#action-cont {
+    display: grid;
+    grid-template-areas:
+    'start'
+    'submit'
+    'build'
+    'tournament';
+
+    gap: 10px;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#action-cont > * {
+    width: 100%;
+}
+
+#info-cont {
+    display: grid;
+    grid-template-areas:
+    'leaderboard stats';
+
+    padding: 10px;
+
+    gap: 10px;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+#info-cont > * {
+    background-color: white;
+    border-radius: 16px;
+
+    border-style: solid;
+    border-color: #1B9AAA;
+    border-width: 4px;
+}
+
+#app-container {
+    margin: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 10vh;
+
+    display: grid;
+    grid-template-areas:
+    'vid vid-se'
+    'vid vid-st';
+
+    gap: 10px;
+
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 3fr 1fr;
+}
+
+#score-container {
+    margin: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 10vh;
+
+    display: grid;
+    grid-template-areas:
+    'sc1 sc2 sc3'
+    'sc4 sc4 sc4';
+
+    gap: 10px;
+
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cb-title {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.s-cont {
+    overflow-y: scroll;
+}
+
+#return-score {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    width: 5vw;
+}
+
+.s-scores > * {
+    display: inline-block;
+}
+
+.s-scores-score {
+    font-weight: bolder;
+}
+
+#se-cont {
+    padding: 10px;
+
+    display: grid;
+    grid-template-areas:
+    'e1 e2 e3'
+    's1 s1 s1'
+    's2 s2 s2'
+    's3 s3 s3';
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 10px;
+}
+
+#se-cont > button {
+    border-radius: 8px !important;
+}
+
+.se-row {
+    background-color: white;
+    border-radius: 8px;
+
+    border-style: solid;
+    border-color: #FFC43D;
+    border-width: 2px;
+
+    text-align: center;
+}
+
+.se-row > * {
+    display: inline-block;
+}
+
+#st-cont {
+    display: grid;
+    grid-template-areas:
+    'title'
+    'chat';
+
+    grid-template-rows: 30px 1fr;
+
+    padding: 10px;
+}
+
+#st-cont > p {
+    text-align: center;
+    font-weight: bolder;
+    color: #EF476F;
+}
+
+.bolded {
+    font-weight: bolder;
+}
+
+#ss-chat {
+    background-color: white;
+    border-radius: 8px;
+
+    padding: 10px;
+
+    border-style: solid;
+    border-color: #FFC43D;
+    border-width: 2px;
+
+    overflow-y: scroll;
+}
+
+.ss-box {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.ssc-item {
+    background-color: #06D6A0;
+    color: white;
+}
+
+.ssc-phase {
+    background-color: #EF476F;
+    color: white;
+}
+
+.ssc-action {
+    background-color: #1B9AAA;
+    color: white;
+}
+
+.ssc-comm {
+    background-color: #FFC43D;
+}
+
+#ss-default {
+    display: none;
+}
